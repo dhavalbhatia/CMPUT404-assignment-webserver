@@ -51,7 +51,6 @@ class MyWebServer(socketserver.BaseRequestHandler):
             elif path.startswith('../'):
                 response = f"HTTP/1.1 404 Not FOUND\r\nContent-Type: text/html;\r\n\r\n404 Not Found"
                 self.request.sendall(bytearray(response, 'utf-8'))
-                return
             
             # parsing get request and adding 'www' if needed
             elif ROOT_PATH not in path:
@@ -71,7 +70,7 @@ class MyWebServer(socketserver.BaseRequestHandler):
                     path += '/'
                     response = f"HTTP/1.1 301 Moved Permanantly\r\nLocation:http://127.0.0.1:8080/{path_301}/\r\nContent-Type: text/html;\r\n\r\n301 Not Found"
                     self.request.sendall(bytearray(response, 'utf-8'))
-                    return
+
             try:
                 if os.path.isdir(path):
                     path += 'index.html'
