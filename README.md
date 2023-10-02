@@ -34,3 +34,5 @@ References
 2. Content-type info:
     https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type
 
+3. 405 Method Not Allowed:
+    https://evertpot.com/http/405-method-not-allowed#:~:text=405%20Method%20Not%20Allowed%20means,do%2C%20using%20the%20Allow%20header.
